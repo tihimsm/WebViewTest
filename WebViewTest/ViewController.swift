@@ -6,15 +6,17 @@
 //  Copyright © 2019 tihimsm. All rights reserved.
 //
 
+//import WebKit
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    @IBAction func tappedOpen(sender: AnyObject) {
+        let myURL = URL(string: "https://qiita.com")
+        if let url = myURL {
+            let vc = SFSafariViewController(url: url)
+            present(vc, animated: true, completion: nil)
+        }
     }
-
-
 }
-
